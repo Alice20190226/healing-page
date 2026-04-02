@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>感受真實的自己｜12星座情緒覺察練習</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #F9F7F4;
+    --surface: #FFFFFF;
+    --text-primary: #1A1714;
+    --text-secondary: #6B6560;
+    --text-light: #A09A94;
+    --border: #E8E4DF;
+    --accent-wind: #7B9E9A;
+    --accent-water: #6B8CAE;
+    --accent-fire: #C4785A;
+    --accent-earth: #8B7355;
+    --accent-moon: #9B8DB0;
+    --wind-bg: #F0F5F4;
+    --water-bg: #EFF3F8;
+    --fire-bg: #FAF1EC;
+    --earth-bg: #F5F1EB;
+    --moon-bg: #F4F1F8;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Noto Sans TC', sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.8;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 80px 48px 120px;
+  }
+
+  /* Header */
+  .header {
+    margin-bottom: 64px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .header-tag {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 400;
+  }
+
+  .header-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 36px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    letter-spacing: 0.02em;
+  }
+
+  .header-subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    font-weight: 300;
+    letter-spacing: 0.03em;
+  }
+
+  /* Intro block */
+  .intro {
+    background: var(--moon-bg);
+    border-left: 3px solid var(--accent-moon);
+    padding: 28px 32px;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 56px;
+  }
+
+  .intro p {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 8px;
+  }
+
+  .intro p:last-child {
+    margin-bottom: 0;
+  }
+
+  .intro .highlight {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--text-primary);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  /* Element sections */
+  .element-section {
+    margin-bottom: 56px;
+    background: var(--surface);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .element-header {
+    padding: 28px 36px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .element-icon {
+    font-size: 24px;
+    line-height: 1;
+    margin-top: 2px;
+  }
+
+  .element-header-text {}
+
+  .element-name {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    letter-spacing: 0.03em;
+  }
+
+  .element-signs {
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.1em;
+    font-weight: 400;
+  }
+
+  .element-body {
+    padding: 0 36px 32px;
+  }
+
+  /* Wind */
+  .wind .element-header { background: var(--wind-bg); }
+  .wind .element-name { color: var(--accent-wind); }
+  .wind .block-label { color: var(--accent-wind); border-color: var(--accent-wind); }
+
+  /* Water */
+  .water .element-header { background: var(--water-bg); }
+  .water .element-name { color: var(--accent-water); }
+  .water .block-label { color: var(--accent-water); border-color: var(--accent-water); }
+
+  /* Fire */
+  .fire .element-header { background: var(--fire-bg); }
+  .fire .element-name { color: var(--accent-fire); }
+  .fire .block-label { color: var(--accent-fire); border-color: var(--accent-fire); }
+
+  /* Earth */
+  .earth .element-header { background: var(--earth-bg); }
+  .earth .element-name { color: var(--accent-earth); }
+  .earth .block-label { color: var(--accent-earth); border-color: var(--accent-earth); }
+
+  /* Content blocks */
+  .content-block {
+    margin-bottom: 28px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+  }
+
+  .content-block:first-child {
+    border-top: none;
+    padding-top: 8px;
+  }
+
+  .block-label {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 12px;
+    padding: 4px 10px;
+    border: 1px solid;
+    display: inline-block;
+    border-radius: 2px;
+  }
+
+  .block-text {
+    color: var(--text-secondary);
+    font-size: 14px;
+    line-height: 2;
+  }
+
+  .block-text p {
+    margin-bottom: 8px;
+  }
+
+  .block-text p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Question callout */
+  .question-callout {
+    background: var(--bg);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 16px 0;
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 2;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  /* Action steps */
+  .action-step {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.9;
+  }
+
+  .action-step-num {
+    color: var(--text-light);
+    font-size: 12px;
+    font-weight: 500;
+    min-width: 20px;
+    margin-top: 3px;
+  }
+
+  /* Reflection */
+  .reflection {
+    border-top: 1px dashed var(--border);
+    padding-top: 20px;
+    margin-top: 4px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 14px;
+    color: var(--text-primary);
+    line-height: 2;
+    font-weight: 400;
+  }
+
+  .reflection-label {
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    color: var(--text-light);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-family: 'Noto Sans TC', sans-serif;
+    font-weight: 400;
+  }
+
+  /* CTA section */
+  .cta-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 40px 36px;
+    margin-top: 16px;
+  }
+
+  .cta-moon {
+    font-size: 28px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .cta-title {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .cta-text {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 2;
+    margin-bottom: 8px;
+  }
+
+  .cta-list {
+    margin: 16px 0 24px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .cta-list li {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 2;
+    padding-left: 16px;
+    position: relative;
+  }
+
+  .cta-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--accent-moon);
+    font-size: 12px;
+  }
+
+  .cta-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 24px 0;
+  }
+
+  .cta-final {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 15px;
+    color: var(--text-primary);
+    line-height: 2;
+    margin-bottom: 24px;
+  }
+
+  .cta-button {
+    display: inline-block;
+    background: var(--accent-moon);
+    color: white;
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .cta-sub {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--text-light);
+    letter-spacing: 0.05em;
+  }
+
+  /* Divider */
+  .section-divider {
+    text-align: center;
+    color: var(--text-light);
+    font-size: 18px;
+    letter-spacing: 0.3em;
+    margin: 8px 0 56px;
+  }
+
+  @media (max-width: 600px) {
+    .page {
+      padding: 48px 24px 80px;
+    }
+    .header-title {
+      font-size: 28px;
+    }
+    .element-header, .element-body {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .cta-section {
+      padding: 32px 24px;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-tag">Moon Shadow Practice · 月亮陰影練習</div>
+    <h1 class="header-title">感受真實的自己</h1>
+    <p class="header-subtitle">12星座情緒覺察練習｜給一直想改變，卻總是卡在半路的你</p>
+  </div>
+
+  <!-- Intro -->
+  <div class="intro">
+    <p>在你繼續往下看之前，先深呼吸一次。</p>
+    <p class="highlight">這份練習只做一件事：幫你聽見內在被壓抑的聲音。</p>
+    <p>不是要你變得更好，不是要你馬上改變，是讓你第一次，真正聽見自己。</p>
+    <p>找一個安靜的空間，準備一本筆記本。</p>
+  </div>
+
+  <!-- Wind -->
+  <div class="element-section wind">
+    <div class="element-header">
+      <div class="element-icon">🌬</div>
+      <div class="element-header-text">
+        <div class="element-name">風象星座</div>
+        <div class="element-signs">雙子 · 天秤 · 水瓶</div>
+      </div>
+    </div>
+    <div class="element-body">
+
+      <div class="content-block">
+        <div class="block-label">你壓抑情緒的方式</div>
+        <div class="block-text">
+          <p>你習慣在感受升起之前，先把它想清楚。情緒還沒被感受，就已經被你分析成一個結論了。</p>
+          <p>久了，你開始以為自己沒有什麼情緒。但其實，你只是太快把它轉成了思考。</p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="block-label">覺察問題</div>
+        <div class="block-text">
+          <p>回想最近一次，你告訴自己「算了，想太多了」的時刻。</p>
+        </div>
+        <div class="question-callout">
+          在你說出「算了」之前，你的身體有什麼感覺？<br>
+          胸口緊？呼吸變淺？還是有一股說不清楚的悶？
+        </div>
+        <div class="block-text">
+          <p>把那個身體的感覺寫下來，不需要解釋它，只是描述它。</p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="block-label">行動練習</div>
+        <div class="block-text">
+          <p>這週，當你又想開始分析一個感受的時候，先暫停。把手放在胸口，問自己：</p>
+        </div>
+        <div class="question-callout">
+          如果這個感受有一個顏色，它是什麼顏色？
+        </div>
+        <div class="block-text">
+          <p>不需要答案是正確的，只需要讓自己停在感受裡，多待一分鐘。</p>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-label">轉念</div>
+        你不是沒有情緒。<br>你只是太習慣思考，忘記了感受也可以被好好待著。
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider">· · ·</div>
+
+  <!-- Water -->
+  <div class="element-section water">
+    <div class="element-header">
+      <div class="element-icon">💧</div>
+      <div class="element-header-text">
+        <div class="element-name">水象星座</div>
+        <div class="element-signs">巨蟹 · 天蠍 · 雙魚</div>
+      </div>
+    </div>
+    <div class="element-body">
+
+      <div class="content-block">
+        <div class="block-label">你壓抑情緒的方式</div>
+        <div class="block-text">
+          <p>你的感受雷達太強，強到你常常分不清楚，哪些情緒是你的，哪些是別人的。</p>
+          <p>於是你習慣先照顧別人的感受，把自己的放在最後。久了，你開始覺得自己的情緒不重要，或者根本不知道自己真正感覺到什麼。</p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="block-label">覺察問題</div>
+        <div class="block-text">
+          <p>回想最近一次，你壓下了某個感受，告訴自己「不要這樣」或「不應該這樣想」。</p>
+        </div>
+        <div class="question-callout">
+          在你壓下去之前，那個感受想告訴你什麼？<br>
+          如果它可以說話，它會說什麼？
+        </div>
+        <div class="block-text">
+          <p>把那句話寫下來。</p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="block-label">行動練習</div>
+        <div class="block-text">
+          <p>這週找一個安靜的時間，給自己15分鐘。在紙上寫：</p>
+        </div>
+        <div class="question-callout">
+          我現在真正的感覺是⋯⋯
+        </div>
+        <div class="block-text">
+          <p>寫到停不下來為止。不需要合理，不需要美化，只需要真實。</p>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-label">轉念</div>
+        你感受別人的能力，是你最珍貴的禮物。<br>但你的情緒，也值得被你自己第一個接住。
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider">· · ·</div>
+
+  <!-- Fire -->
+  <div class="element-section fire">
+    <div class="element-header">
+      <div class="element-icon">🔥</div>
+      <div class="element-header-text">
+        <div class="element-name">火象星座</div>
+        <div class="element-signs">牡羊 · 獅子 · 射手</div>
+      </div>
+    </div>
+    <div class="element-body">
+
+      <div class="content-block">
+        <div class="block-label">你壓抑情緒的方式</div>
+        <div class="block-text">
+          <p>你習慣用行動、熱情、和強度來填滿內在的空間。只要一直動，就不用停下來面對那些說不清楚的感受。</p>
+          <p>久了，你開始以為自己很強，可以扛下一切。但那些沒被感受的情緒，只是換了一個地方待著。</p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="block-label">覺察問題</div>
+        <div class="block-text">
+          <p>回想最近一次，你用「沒關係，繼續前進」帶過某個感受的時刻。</p>
+        </div>
+        <div class="question-callout">
+          如果當時你沒有繼續前進，而是停下來，你會感覺到什麼？<br>
+          那個感受，你有多久沒有讓它被好好感受過了？
+        </div>
+        <div class="block-text">
+          <p>把你的答案寫下來。</p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="block-label">行動練習</div>
+        <div class="block-text">
+          <p>這週選一天，給自己什麼都不做的空檔。不聽Podcast，不滑手機，不計畫任何事。</p>
+          <p>只是坐著，讓那些平常被行動蓋住的感受，慢慢浮上來。浮上來什麼，就寫下什麼。</p>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-label">轉念</div>
+        你不是需要一直強才安全。<br>停下來感受，不是軟弱，是你給自己最誠實的一次對話。
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider">· · ·</div>
+
+  <!-- Earth -->
+  <div class="element-section earth">
+    <div class="element-header">
+      <div class="element-icon">🌍</div>
+      <div class="element-header-text">
+        <div class="element-name">土象星座</div>
+        <div class="element-signs">金牛 · 處女 · 魔羯</div>
+      </div>
+    </div>
+    <div class="element-body">
+
+      <div class="content-block">
+        <div class="block-label">你壓抑情緒的方式</div>
+        <div class="block-text">
+          <p>你習慣用穩定、忍耐、和把事情做好來管理內在的波動。情緒對你來說，像是一種會打亂節奏的東西，所以你學會了把它壓在底下，繼續運作。</p>
+          <p>久了，你開始覺得表達情緒是一種失控，或者是一種不成熟。</p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="block-label">覺察問題</div>
+        <div class="block-text">
+          <p>回想最近一次，你告訴自己「忍一下就過了」的時刻。</p>
+        </div>
+        <div class="question-callout">
+          那個你忍下去的感受，現在還在嗎？<br>
+          它在你身體的哪個地方？
+        </div>
+        <div class="block-text">
+          <p>把那個位置和感覺寫下來。</p>
+        </div>
+      </div>
+
+      <div class="content-block">
+        <div class="block-label">行動練習</div>
+        <div class="block-text">
+          <p>這週找一個你信任的人，告訴他一件你最近忍下來的事。不需要解釋為什麼，不需要說得完整，只需要說出那個感受：</p>
+        </div>
+        <div class="question-callout">
+          那件事讓我感覺到⋯⋯
+        </div>
+        <div class="block-text">
+          <p>說完之後，注意你身體的變化。</p>
+        </div>
+      </div>
+
+      <div class="reflection">
+        <div class="reflection-label">轉念</div>
+        你穩定的能力，從來不是問題。<br>允許自己偶爾不穩定，才是真正的強大。
+      </div>
+
+    </div>
+  </div>
+
+  <div class="section-divider">· · ·</div>
+
+  <!-- CTA -->
+  <div class="cta-section">
+    <span class="cta-moon">🌙</span>
+    <h2 class="cta-title">做完練習之後</h2>
+    <p class="cta-text">如果你做完這份練習，感覺看見了一些東西，但面對那個卡住的選擇，還是不知道該怎麼走——</p>
+    <p class="cta-text">那不是因為你想得不夠清楚。</p>
+    <p class="cta-text">是因為有些決定，靠自己在裡面繞，很難看見出口在哪。你需要的，是有人陪你把選項放進星盤裡，找到那條你一直都知道、但不敢確定的路。</p>
+
+    <div class="cta-divider"></div>
+
+    <p class="cta-text">占星諮詢可以幫你做的事：</p>
+    <ul class="cta-list">
+      <li>把你目前的選項放進星盤裡一起看</li>
+      <li>找出是什麼讓你一直卡在這個決定上</li>
+      <li>在一次諮詢裡，幫你選出一條可以走的路</li>
+    </ul>
+
+    <div class="cta-divider"></div>
+
+    <p class="cta-final">不是告訴你應該怎麼選，<br>而是讓你第一次清楚地感受，<br>這條路，是我必須踏上的選擇。</p>
+
+    <div style="margin-top: 24px; background: var(--moon-bg); border: 1.5px solid var(--accent-moon); border-radius: 8px; padding: 20px 24px; text-align: center;">
+      <p style="font-size: 11px; letter-spacing: 0.2em; color: var(--accent-moon); text-transform: uppercase; margin-bottom: 8px; font-weight: 500;">預約方式</p>
+      <p style="font-family: 'Noto Serif TC', serif; font-size: 16px; color: var(--text-primary); font-weight: 500; line-height: 1.8;">LINE@ 留言「占星諮詢」</p>
+      <p style="font-size: 13px; color: var(--text-secondary); margin-top: 6px; line-height: 1.8;">我會回覆你可以預約的時間</p>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
